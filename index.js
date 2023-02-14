@@ -37,6 +37,9 @@ const resolvers = {
 // Apollo Server Setup
 const server = new ApolloServer({
     schema: buildSubgraphSchema([{ typeDefs, resolvers }]),
+    plugins: [
+        ApolloServerPluginUsageReportingDisabled(),
+    ],
 });
   
 server.listen({ port }).then(({ url }) => {
