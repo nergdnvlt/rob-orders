@@ -2,6 +2,7 @@
 const fs = require("fs");
 const { ApolloServer, gql } = require("apollo-server");
 const { buildSubgraphSchema } = require("@apollo/federation")
+import { ApolloServerPluginUsageReportingDisabled } from "apollo-server-core";
 
 // Internal Dependencies
 const typeDefs = gql(fs.readFileSync("./orders.graphql", 'utf8'));
